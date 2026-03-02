@@ -1,0 +1,36 @@
+#include <windows.h>
+#include "version.h"
+
+// ── EXE Icon ──
+IDI_ICON1               ICON    DISCARDABLE     "Resources/icon.ico"
+
+// ── Administrator Permissions Manifest ──
+1 24 "app.manifest"
+
+// ── Windows File Version Details ──
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     APP_VERSION_COMMA
+PRODUCTVERSION  APP_VERSION_COMMA
+FILEFLAGSMASK   0x3fL
+FILEFLAGS       0x0L
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"  // English (US) / Windows Multilingual
+        BEGIN
+            VALUE "CompanyName",      APP_COMPANY "\0"
+            VALUE "FileDescription",  APP_DESCRIPTION "\0"
+            VALUE "FileVersion",      APP_VERSION_STR "\0"
+            VALUE "LegalCopyright",   APP_COPYRIGHT "\0"
+            VALUE "ProductName",      APP_NAME "\0"
+            VALUE "ProductVersion",   APP_VERSION_STR "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1252
+    END
+END

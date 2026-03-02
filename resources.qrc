@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/icon.png</file>
+        <file>Resources/icon.ico</file>
+        <file>Resources/splash.png</file>
+        <file>style.qss</file>
+        <file>stylelight.qss</file>
+        <file>Resources/apktool.jar</file>
+        <file>Resources/APKEditor.jar</file>
+        <file>Resources/apksigner.jar</file>
+        <file>Resources/baksmali.jar</file>
+        <file>Resources/smali.jar</file>
+        <file>Resources/uber-apk-signer.jar</file>
+        <file>Resources/adb.exe</file>
+        <file>Resources/aapt.exe</file>
+        <file>Resources/aapt2.exe</file>
+        <file>Resources/zipalign.exe</file>
+        <file>Resources/AdbWinApi.dll</file>
+        <file>Resources/AdbWinUsbApi.dll</file>
+        <file>Resources/libwinpthread-1.dll</file>
+        <file>Resources/testkey.pk8</file>
+        <file>Resources/testkey.x509.pem</file>
+    </qresource>
+</RCC>

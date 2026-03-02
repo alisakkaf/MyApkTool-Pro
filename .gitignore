@@ -1,0 +1,56 @@
+# C++ Objects and Archives
+*.slo
+*.lo
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.def
+*.exp
+*.ilk
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Qt Specific
+Makefile
+Makefile.*
+*.qmake.stash
+.qmake.cache
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+*.prl
+
+# Qt Creator settings
+*.pro.user
+*.pro.user.*
+*.qm
+
+# Build Dirs
+build/
+release/
+debug/
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Heavy custom resources 
+# (Must be uploaded to releases manually or ignored entirely)
+Resources/
+.qtc_clangd/ 
+.qtc_clangd/ 
+.qtc_clangd/ 
+.qtc_clangd/ 
+Resources.rar 
+Resources.rar 

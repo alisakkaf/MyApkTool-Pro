@@ -1,0 +1,1710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1091</width>
+    <height>738</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MyApkTool – Professional Edition v1.0</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>6</number>
+    </property>
+    <property name="topMargin">
+     <number>6</number>
+    </property>
+    <property name="rightMargin">
+     <number>6</number>
+    </property>
+    <property name="bottomMargin">
+     <number>6</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="headerBar">
+      <layout class="QHBoxLayout" name="headerLayout">
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>6</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelTitle">
+         <property name="text">
+          <string>🛠 MyApkTool Pro</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="headerSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnToggleTheme">
+         <property name="toolTip">
+          <string>Toggle Dark / Light Mode</string>
+         </property>
+         <property name="text">
+          <string>🌗 Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnMinimize">
+         <property name="text">
+          <string>—</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnMaximize">
+         <property name="text">
+          <string>🗖</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnClose">
+         <property name="text">
+          <string>✕</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="currentIndex">
+       <number>7</number>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tabDecompile">
+       <attribute name="title">
+        <string>🔓 Decompile</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="decompileLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="grpDecompileInput">
+          <property name="title">
+           <string>APK File</string>
+          </property>
+          <layout class="QHBoxLayout" name="grpDecompileInputLayout">
+           <item>
+            <widget class="QLineEdit" name="leApkPathDecompile">
+             <property name="placeholderText">
+              <string>Select or drag an APK file…</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnBrowseApkDecompile">
+             <property name="text">
+              <string>📂 Browse</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpDecompileOptions">
+          <property name="title">
+           <string>Decompile Options</string>
+          </property>
+          <layout class="QGridLayout" name="decompOptLayout">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="chkDecodeResources">
+             <property name="text">
+              <string>Decode Resources</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="chkDecodeSources">
+             <property name="text">
+              <string>Decode Sources (Smali)</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="chkUseAapt2Decompile">
+             <property name="text">
+              <string>Use AAPT2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="chkClearFramework">
+             <property name="text">
+              <string>Clear Framework Before</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <layout class="QHBoxLayout" name="decompilerHLayout">
+             <item>
+              <widget class="QLabel" name="lblDecompiler">
+               <property name="text">
+                <string>Decompiler:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cmbDecompiler">
+               <item>
+                <property name="text">
+                 <string>apktool</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>apkeditor</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <spacer name="decompilerSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="decompileBtnLayout">
+          <item>
+           <widget class="QPushButton" name="btnDecompile">
+            <property name="text">
+             <string>▶ Decompile APK</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnOpenProjectFolder">
+            <property name="text">
+             <string>📁 Open Project</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnOpenManifest">
+            <property name="text">
+             <string>📄 Manifest</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="decompileActionsSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCancelDecompile">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>⏹ Cancel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="decompileVSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabCompile">
+       <attribute name="title">
+        <string>⚙ Compile</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="compileLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="grpCompileInput">
+          <property name="title">
+           <string>Project Folder</string>
+          </property>
+          <layout class="QHBoxLayout" name="compileInputLayout">
+           <item>
+            <widget class="QLineEdit" name="leProjectPathCompile">
+             <property name="placeholderText">
+              <string>Select a decompiled project folder…</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnBrowseProjectCompile">
+             <property name="text">
+              <string>📂 Browse</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpCompileOptions">
+          <property name="title">
+           <string>Compile Options</string>
+          </property>
+          <layout class="QHBoxLayout" name="compileOptionsLayout">
+           <item>
+            <widget class="QCheckBox" name="chkUseAapt2Compile">
+             <property name="text">
+              <string>Use AAPT2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chkAutoSign">
+             <property name="text">
+              <string>Auto-Sign After Build</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chkAutoZipalign">
+             <property name="text">
+              <string>Auto-Zipalign</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chkZipalignBefore">
+             <property name="text">
+              <string>Zipalign Before Sign</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="compileOptionsSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="compileBtnLayout">
+          <item>
+           <widget class="QPushButton" name="btnCompile">
+            <property name="text">
+             <string>▶ Build APK</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnOpenOutput">
+            <property name="text">
+             <string>📁 Open Output</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="compileActionsSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCancelCompile">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>⏹ Cancel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="compileVSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSign">
+       <attribute name="title">
+        <string>✍ Sign / Zipalign</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="signLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="grpSignInput">
+          <property name="title">
+           <string>APK File</string>
+          </property>
+          <layout class="QHBoxLayout" name="signInputLayout">
+           <item>
+            <widget class="QLineEdit" name="leApkPathSign">
+             <property name="placeholderText">
+              <string>Select APK to sign / align…</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnBrowseApkSign">
+             <property name="text">
+              <string>📂 Browse</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpSignOptions">
+          <property name="title">
+           <string>Signing Options</string>
+          </property>
+          <layout class="QGridLayout" name="signOptionsLayout">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="chkV1Sign">
+             <property name="text">
+              <string>V1 (JAR)</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="chkV2Sign">
+             <property name="text">
+              <string>V2 (APK Signature)</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="chkV3Sign">
+             <property name="text">
+              <string>V3 (Rotation)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="zipalignLayout">
+             <item>
+              <widget class="QLabel" name="lblZipalign">
+               <property name="text">
+                <string>Zipalign:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spnAlignment">
+               <property name="minimum">
+                <number>4</number>
+               </property>
+               <property name="maximum">
+                <number>32</number>
+               </property>
+               <property name="value">
+                <number>4</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="zipalignSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="signBtnsLayout">
+          <item>
+           <widget class="QPushButton" name="btnSign">
+            <property name="text">
+             <string>✍ Sign APK</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnZipalign">
+            <property name="text">
+             <string>⚡ Zipalign</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSignAndAlign">
+            <property name="text">
+             <string>⚡✍ Sign + Align</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="signSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="signVSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabMerge">
+       <attribute name="title">
+        <string>🔀 Merge Bundles</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="mergeLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="grpMergeInput">
+          <property name="title">
+           <string>Bundle File (.xapk / .apks / .apkm)</string>
+          </property>
+          <layout class="QHBoxLayout" name="mergeInputLayout">
+           <item>
+            <widget class="QLineEdit" name="leMergeInput">
+             <property name="placeholderText">
+              <string>Select bundle file…</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnBrowseMergeInput">
+             <property name="text">
+              <string>📂 Browse</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="mergeBtnsLayout">
+          <item>
+           <widget class="QPushButton" name="btnMerge">
+            <property name="text">
+             <string>🔀 Merge to APK</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="mergeSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="mergeVSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabBaksmali">
+       <attribute name="title">
+        <string>📱 Baksmali</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="baksmaliLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="grpBak">
+          <property name="title">
+           <string>Baksmali (DEX → Smali)</string>
+          </property>
+          <layout class="QVBoxLayout" name="baksmaliVLayout1">
+           <item>
+            <layout class="QHBoxLayout" name="baksmaliHLayout1">
+             <item>
+              <widget class="QLineEdit" name="leDexFile">
+               <property name="placeholderText">
+                <string>DEX file path…</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnBrowseDex">
+               <property name="text">
+                <string>Browse</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnBaksmali">
+             <property name="text">
+              <string>▶ Disassemble DEX</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpSmali">
+          <property name="title">
+           <string>Smali (Smali → DEX)</string>
+          </property>
+          <layout class="QVBoxLayout" name="smaliVLayout1">
+           <item>
+            <layout class="QHBoxLayout" name="smaliHLayout1">
+             <item>
+              <widget class="QLineEdit" name="leSmaliDir">
+               <property name="placeholderText">
+                <string>Smali folder path…</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnBrowseSmaliDir">
+               <property name="text">
+                <string>Browse</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnSmali">
+             <property name="text">
+              <string>▶ Assemble Smali</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="baksmaliVSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabInfo">
+       <attribute name="title">
+        <string>ℹ APK Info</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="infoLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="infoInputLayout">
+          <item>
+           <widget class="QLineEdit" name="leApkPathInfo">
+            <property name="placeholderText">
+             <string>Select APK to inspect…</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBrowseApkInfo">
+            <property name="text">
+             <string>📂 Browse</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnGetApkInfo">
+            <property name="text">
+             <string>ℹ Get Info</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpApkInfoDisplay">
+          <property name="title">
+           <string>APK Details</string>
+          </property>
+          <layout class="QFormLayout" name="formApkInfo">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblInfo1">
+             <property name="text">
+              <string>Package Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="leInfoPackageName">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblInfo2">
+             <property name="text">
+              <string>Version Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="leInfoVersionName">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblInfo3">
+             <property name="text">
+              <string>Version Code:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="leInfoVersionCode">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblInfo4">
+             <property name="text">
+              <string>Min SDK:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="leInfoMinSdk">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="lblInfo5">
+             <property name="text">
+              <string>Target SDK:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="leInfoTargetSdk">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpPermissions">
+          <property name="title">
+           <string>Extra Details</string>
+          </property>
+          <layout class="QVBoxLayout" name="permissionsLayout">
+           <item>
+            <widget class="QTextEdit" name="tePermissions">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabAdb">
+       <attribute name="title">
+        <string>📡 ADB Manager</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="adbMainLayout">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="grpDevices">
+          <property name="title">
+           <string>Connected Devices</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnDisconnect">
+             <property name="text">
+              <string>⛔ Disconnect</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="btnRefreshDevices">
+             <property name="text">
+              <string>🔄 Refresh</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QComboBox" name="cmbDevices">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpWifi">
+          <property name="title">
+           <string>WiFi Connect</string>
+          </property>
+          <layout class="QHBoxLayout" name="wifiLayout">
+           <item>
+            <widget class="QLabel" name="lblWifi1">
+             <property name="text">
+              <string>IP:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="leWifiIp">
+             <property name="placeholderText">
+              <string>192.168.1.100</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblWifi2">
+             <property name="text">
+              <string>Port:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="spnWifiPort">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>65535</number>
+             </property>
+             <property name="value">
+              <number>5555</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnConnectWifi">
+             <property name="text">
+              <string>📡 Connect</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnWifiPair">
+             <property name="text">
+              <string>🔗 Pair Device</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpPackages">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Installed Packages</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="3" column="6">
+            <widget class="QPushButton" name="btnOpenBackupDir">
+             <property name="text">
+              <string>📂 Backup Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QPushButton" name="btnPackageInfo">
+             <property name="text">
+              <string>ℹ Package Info</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" colspan="5">
+            <widget class="QLineEdit" name="lePackageSearch">
+             <property name="placeholderText">
+              <string>Search packages…</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblPackageSelected">
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Selected: None</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="2">
+            <widget class="QComboBox" name="cmbPackageFilter">
+             <item>
+              <property name="text">
+               <string>All Packages</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>User Only</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>System Only</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="7">
+            <spacer name="packagesSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>502</width>
+               <height>13</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="0" colspan="9">
+            <widget class="QTableWidget" name="tblPackages">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>Type</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Package Name</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="btnInstallApk">
+             <property name="text">
+              <string>📦 Install APK</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3" colspan="2">
+            <widget class="QPushButton" name="btnUninstall">
+             <property name="text">
+              <string>🗑 Uninstall</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="8">
+            <widget class="QLabel" name="lblPackageCount">
+             <property name="text">
+              <string>0 packages</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1" colspan="2">
+            <widget class="QPushButton" name="btnBackupApk">
+             <property name="text">
+              <string>⬇ Backup APK</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="8">
+            <widget class="QPushButton" name="btnRefreshPackages">
+             <property name="text">
+              <string>🔄 Refresh List Apps</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSettings">
+       <attribute name="title">
+        <string>⚙ Settings</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="settingsMainLayout">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollSettings">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1038</width>
+             <height>590</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="settingsContentLayout">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="grpJavaSettings">
+              <property name="title">
+               <string>Java Configuration</string>
+              </property>
+              <layout class="QFormLayout" name="javaLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="lblJava1">
+                 <property name="text">
+                  <string>Java Path:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <layout class="QHBoxLayout" name="javaHLayout1">
+                 <item>
+                  <widget class="QLineEdit" name="leJavaPath">
+                   <property name="placeholderText">
+                    <string>Auto-detect</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnBrowseJavaPath">
+                   <property name="text">
+                    <string>Browse</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lblJava2">
+                 <property name="text">
+                  <string>Heap Size (MB):</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QSpinBox" name="spnHeapSize">
+                 <property name="minimum">
+                  <number>256</number>
+                 </property>
+                 <property name="maximum">
+                  <number>16384</number>
+                 </property>
+                 <property name="value">
+                  <number>2048</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QCheckBox" name="chkSuppressJavaWarn">
+                 <property name="text">
+                  <string>Suppress Java 9+ Module Warnings</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpCustomTools">
+              <property name="title">
+               <string>Custom Tool Paths</string>
+              </property>
+              <layout class="QFormLayout" name="customToolsLayout">
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="chkUseCustomApktool">
+                 <property name="text">
+                  <string>Custom Apktool:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <layout class="QHBoxLayout" name="toolsHLayout1">
+                 <item>
+                  <widget class="QComboBox" name="cmbCustomApktool">
+                   <property name="editable">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnBrowseApktool">
+                   <property name="text">
+                    <string>Browse</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="chkUseCustomAapt">
+                 <property name="text">
+                  <string>Custom AAPT:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <layout class="QHBoxLayout" name="toolsHLayout2">
+                 <item>
+                  <widget class="QLineEdit" name="leCustomAaptPath"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnBrowseAapt">
+                   <property name="text">
+                    <string>Browse</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="0">
+                <widget class="QCheckBox" name="chkUseCustomAapt2">
+                 <property name="text">
+                  <string>Custom AAPT2:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <layout class="QHBoxLayout" name="toolsHLayout3">
+                 <item>
+                  <widget class="QLineEdit" name="leCustomAapt2Path"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnBrowseAapt2">
+                   <property name="text">
+                    <string>Browse</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="lblCustomTools1">
+                 <property name="text">
+                  <string>APK Signer:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <layout class="QHBoxLayout" name="toolsHLayout4">
+                 <item>
+                  <widget class="QLineEdit" name="leApksignerPath"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnBrowseApksigner">
+                   <property name="text">
+                    <string>Browse</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpKeystore">
+              <property name="title">
+               <string>Keystore Settings</string>
+              </property>
+              <layout class="QFormLayout" name="keystoreLayout">
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="chkUseCustomKeystore">
+                 <property name="text">
+                  <string>Use Custom Keystore</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lblKeystore1">
+                 <property name="text">
+                  <string>Keystore File:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <layout class="QHBoxLayout" name="keystoreHLayout">
+                 <item>
+                  <widget class="QComboBox" name="cmbKeystorePath">
+                   <property name="editable">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnBrowseKeystore">
+                   <property name="text">
+                    <string>Browse</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCreateKeystore">
+                   <property name="text">
+                    <string>✨ Create Keystore</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="lblKeystore2">
+                 <property name="text">
+                  <string>Store Password:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="leKeystorePass">
+                 <property name="echoMode">
+                  <enum>QLineEdit::Password</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="lblKeystore3">
+                 <property name="text">
+                  <string>Key Alias:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="leKeyAlias"/>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lblKeystore4">
+                 <property name="text">
+                  <string>Key Password:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="leKeyPass">
+                 <property name="echoMode">
+                  <enum>QLineEdit::Password</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpFramework">
+              <property name="title">
+               <string>Framework Management</string>
+              </property>
+              <layout class="QHBoxLayout" name="frameworkHLayout">
+               <item>
+                <widget class="QPushButton" name="btnInstallFramework">
+                 <property name="text">
+                  <string>📦 Install Framework</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btnClearFramework">
+                 <property name="text">
+                  <string>🗑 Clear Framework Cache</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="frameworkSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="settingsActionLayout">
+              <item>
+               <widget class="QPushButton" name="btnSaveSettings">
+                <property name="text">
+                 <string>💾 Save Settings</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnResetSettings">
+                <property name="text">
+                 <string>↩ Reset to Defaults</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="settingsActionSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="settingsVSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="logControlBar">
+      <layout class="QHBoxLayout" name="logCtrlLayout">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="leftMargin">
+        <number>8</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>8</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lblLogTitle">
+         <property name="text">
+          <string>📋 Activity Log</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="logSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnToggleLog">
+         <property name="text">
+          <string>⬇ Hide</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnCopyLog">
+         <property name="text">
+          <string>📋 Copy</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnClearLog">
+         <property name="text">
+          <string>🗑 Clear</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="logTextEdit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
