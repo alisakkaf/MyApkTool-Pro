@@ -136,9 +136,6 @@ If you just want to use the tool without messing with C++ code, follow these ste
 
 **Latest Release Details:**
 * **File:** `MyApkTool.exe` (Standalone)
-* **Size:** 61.3 MB
-* **Uploaded:** 18 hours ago
-* **SHA-256:** `f4085f3c1ea7998683ebb8245da6d99f95d8f14818c6d73b79b79b403be1db3f`
 
 **Steps:**
 1. Navigate to the official [Releases page](https://github.com/alisakkaf/MyApkTool-Pro/releases).
