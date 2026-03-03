@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://i.ibb.co/8LXMML3k/icon.png" style="width: 150px; height: 150px; object-fit: contain; drop-shadow: 0px 4px 6px rgba(0,0,0,0.1);" alt="MyApkTool Pro Icon"/>
+<img src="https://i.ibb.co/8LXMML3k/icon.png" style="width: 100px; height: 100px; object-fit: contain; drop-shadow: 0px 4px 6px rgba(0,0,0,0.1);" alt="MyApkTool Pro Icon"/>
 
 # 🛡️ MyApkTool Pro
 
