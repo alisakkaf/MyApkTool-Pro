@@ -1,37 +1,52 @@
 <div align="center">
 
-<img src="https://i.ibb.co/8LXMML3k/icon.png" style="width: 150px; height: 150px; object-fit: contain; drop-shadow: 0px 4px 6px rgba(0,0,0,0.1);" alt="MyApkTool Pro Icon"/>
+<img src="https://i.ibb.co/8LXMML3k/icon.png" width="160" height="160" style="object-fit: contain; drop-shadow: 0px 4px 6px rgba(0,0,0,0.1);" alt="MyApkTool Pro Icon"/>
 
 # 🛡️ MyApkTool Pro
 
 **The Ultimate, Professional APK Reverse Engineering & Android Management Toolkit for Windows**
 
-[![Release](https://img.shields.io/github/v/release/alisakkaf/MyApkTool-Pro?style=for-the-badge&color=blue)](https://github.com/alisakkaf/MyApkTool-Pro/releases)
-[![Qt](https://img.shields.io/badge/Built_with-Qt_5.14.2-41CD52?style=for-the-badge&logo=qt)](https://www.qt.io)
-[![C++](https://img.shields.io/badge/C++-14-00599C?style=for-the-badge&logo=cplusplus)](https://cppreference.com)
-[![Platform](https://img.shields.io/badge/Platform-Windows-0078D7?style=for-the-badge&logo=windows)](https://www.microsoft.com/windows)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Developer](https://img.shields.io/badge/Developer-Ali%20Sakkaf-black?style=for-the-badge&logo=codeforces)](https://mysterious-dev.com/)
+<p>
+  <a href="https://github.com/alisakkaf/MyApkTool-Pro/releases"><img src="https://img.shields.io/github/v/release/alisakkaf/MyApkTool-Pro?style=for-the-badge&color=blue" alt="Release"></a>
+  <a href="https://xdaforums.com/t/windows-tool-myapktool-pro-advanced-gui-for-apktool-signer-zipalign-adb-management-toolkit.4781628/"><img src="https://img.shields.io/badge/XDA_Forums-Official_Thread-F5A201?style=for-the-badge&logo=xda" alt="XDA Forums"></a>
+  <a href="https://www.qt.io"><img src="https://img.shields.io/badge/Built_with-Qt_5.14.2-41CD52?style=for-the-badge&logo=qt" alt="Qt"></a>
+  <a href="https://cppreference.com"><img src="https://img.shields.io/badge/C++-14-00599C?style=for-the-badge&logo=cplusplus" alt="C++"></a>
+  <a href="https://www.microsoft.com/windows"><img src="https://img.shields.io/badge/Platform-Windows-0078D7?style=for-the-badge&logo=windows" alt="Platform"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"></a>
+  <a href="https://mysterious-dev.com/"><img src="https://img.shields.io/badge/Developer-Ali%20Sakkaf-black?style=for-the-badge&logo=codeforces" alt="Developer"></a>
+</p>
 
----
-*Developed by **Ali Sakkaf** (Active since 2016)*
+*Meticulously crafted by **Ali Sakkaf** (Active since 2016)*
+
+<br>
+<i>Empowering malware analysts, penetration testers, and Android developers with an unmatched GUI experience.</i>
+<br><br>
+
 </div>
 
+---
+
 ## 📖 Table of Contents
+<details open>
+<summary>Click to expand / collapse</summary>
+
 1. [About The Project](#about)
 2. [Important Disclaimer](#disclaimer)
-3. [Deep-Dive Feature Showcase](#features)
+3. [Python Version Available](#python-version)
+4. [Deep-Dive Feature Showcase](#features)
    - [1. Advanced Decompilation & Compilation Engine](#engine)
    - [2. Cryptography, Signing & Zipalign](#crypto)
    - [3. DEX Manipulation, Smali & APK Merging](#dex)
    - [4. Ultimate ADB Device Manager & WiFi Pairing](#adb)
    - [5. Professional UI/UX & Architecture](#uiux)
-4. [Prerequisites & System Requirements](#prerequisites)
-5. [Installation & Usage Guide](#installation)
-6. [Project Architecture & Source Tree](#architecture)
-7. [Embedded Tools & Open Source Licenses](#tools)
-8. [License & Copyright](#license)
-9. [Author & Contact](#contact)
+5. [Prerequisites & System Requirements](#prerequisites)
+6. [Installation & Usage Guide](#installation)
+7. [Project Architecture & Source Tree](#architecture)
+8. [Embedded Tools & Open Source Licenses](#tools)
+9. [License & Copyright](#license)
+10. [Author & Contact](#contact)
+
+</details>
 
 ---
 
@@ -49,8 +64,22 @@ Whether you are translating an app, removing bloatware, patching vulnerabilities
 <a id="disclaimer"></a>
 ## ⚠️ Important Disclaimer
 
-> Please read the full [DISCLAIMER.md](DISCLAIMER.md) before downloading or building this project.
+> [!CAUTION]
+> Please read the full [DISCLAIMER.md](DISCLAIMER.md) before downloading or building this project.  
 > **MyApkTool Pro** is provided strictly for **educational purposes, personal development, and authorized security auditing**. The developer (Ali Sakkaf) assumes no liability and is not responsible for any misuse, damage, or illegal activities caused by utilizing this software. Always respect copyright laws and terms of service of the applications you analyze.
+
+---
+
+<a id="python-version"></a>
+## 🐍 Python Version Available (NEW!)
+
+For developers and researchers who prefer **Python** over C++, I am thrilled to announce a collaboration with the brilliant **AmrKhaled**! 
+We have ported **MyApkTool Pro** into a fully functional Python application retaining the exact same powerful GUI, features, and capabilities.
+
+If you love hacking Python scripts and customizing your tools on the fly without setting up a C++ compiler, this is for you!
+
+- **Python Repository:** [AmrKhaled-Tech/ApkTool-Pro](https://github.com/AmrKhaled-Tech/ApkTool-Pro)
+- **Direct Download (Zip):** [Download Python Version Here](https://github.com/AmrKhaled-Tech/ApkTool-Pro/archive/refs/heads/main.zip)
 
 ---
 
@@ -73,7 +102,7 @@ Security constraints in modern Android versions require precise signing schemes.
 * **Zipalign Optimization:** Configure Zipalign to run *before* or *after* signing (crucial for V2/V3 schemes) with customizable 4-byte alignment to optimize RAM usage on Android devices.
 * **Advanced Keystore Manager:** Stop typing terminal commands to generate keys. Create custom `.jks` or `.keystore` files directly from a GUI dialog with full Distinguished Name (DN) fields: Common Name (CN), Organizational Unit (OU), Organization (O), Locality (L), State (ST), and Country (C).
 * **Multi-Profile System:** The app securely saves your active keystore credentials (Password, Alias, Keypass) into a `config.json` file. Switch between different developer identities instantly via a QComboBox without re-typing passwords.
-* **Smart Keytool Detection:** The app intelligently hunts for `keytool.exe` by checking `JAVA_HOME`, standard Oracle paths, and Android Studio directories.
+* **Smart Keytool Detection:** The app intelligently hunts for `keytool.exe` by checking `JAVA_HOME`, standard Oracle paths, Amazon Corretto, and Android Studio directories.
 * **Fallback Test Keys:** Includes built-in AOSP test keys (`testkey.pk8` & `testkey.x509.pem`) for quick debugging.
 
 <a id="dex"></a>
@@ -87,7 +116,8 @@ For reverse engineers who want granular control over the bytecode.
 ### 4. Ultimate ADB Device Manager & WiFi Pairing
 Forget the command prompt. Manage your connected devices through a clean, responsive UI.
 * **Smart Device Discovery:** Automatically detects and lists connected USB and WiFi devices.
-* **Next-Gen WiFi Scanner (Android 11+ Pairing):** * Features a highly aggressive, silent parallel ping scanner utilizing **200 threads** to discover ADB-enabled devices on your network.
+* **Next-Gen WiFi Scanner (Android 11+ Pairing):** 
+  * Features a highly aggressive, silent parallel ping scanner utilizing **200 threads** to discover ADB-enabled devices on your network.
   * Uses `CREATE_NO_WINDOW` flags to ensure your screen isn't spammed with flashing CMD boxes.
   * Parses your local subnet via `ipconfig` and adds smart fallback subnets (`192.168.x.x`, `172.20.10.x`, `10.0.0.x`).
   * Full GUI dialog for Android 11+ wireless debugging pairing (IP:Port + Pairing Code).
@@ -112,13 +142,18 @@ Built for those who stare at screens for 12 hours a day.
 To ensure maximum performance and compatibility, please verify your environment before running or building the application.
 
 ### Runtime Requirements (For End Users)
+
+> [!IMPORTANT]  
+> **Java is strictly required** for the `.jar` files (Apktool, apksigner, smali) to execute properly. We highly recommend installing **Amazon Corretto**.
+
 | Requirement | Details |
 |---|---|
-| **Operating System** | Windows 10 / Windows 11 (32-bit or 64-bit). |
+| **Operating System** | Windows 7 / Windows 10 / Windows 11 (32-bit or 64-bit). |
 | **Java Runtime (JDK/JRE)** | **Crucial:** Java is strictly required to run `.jar` tools (Apktool, Signer). Ensure the `JAVA_HOME` environment variable is set.<br/><br/>**Official Supported Downloads:**<br/>🔗 [Java 21 (LTS)](https://www.oracle.com/java/technologies/downloads/#java21)<br/>🔗 [Java 25](https://www.oracle.com/java/technologies/downloads/#java25)<br/>🔗 [Java 9 Archive](https://www.oracle.com/java/technologies/javase/javase9-archive-downloads.html) |
 | **Device Drivers** | Standard Android USB drivers (OEM specific or Google Generic) if connecting via USB. |
 
 ### Build Requirements (For Developers)
+
 | Requirement | Version / Details |
 |---|---|
 | **Qt Framework** | Version **5.14.2**. (A static build is highly recommended if you plan to distribute a single `.exe` file without `.dll` dependencies). |
@@ -132,29 +167,76 @@ To ensure maximum performance and compatibility, please verify your environment 
 ## 🛠️ Installation & Usage Guide
 
 ### Option 1: Quick Start (Pre-built Portable EXE)
-If you just want to use the tool without messing with C++ code, follow these steps for a clean setup:
-
-**Latest Release Details:**
-* **File:** `MyApkTool.exe` (Standalone)
-
-**Steps:**
-1. Navigate to the official [Releases page](https://github.com/alisakkaf/MyApkTool-Pro/releases).
-2. Download `MyApkTool.exe`.
-3. **Important:** Do not run the tool from your Desktop or Downloads folder directly. Create a dedicated folder in your main drive (e.g., `C:\MyApkTool\`) and move the `.exe` file there.
+If you just want to use the tool without messing with C++ code:
+1. Navigate to the [Releases page](https://github.com/alisakkaf/MyApkTool-Pro/releases).
+2. Download the latest `MyApkTool-vX.X-win32.zip`.
+3. Extract the folder anywhere on your computer (e.g., `C:\MyApkTool`). The app is 100% portable.
 4. Run `MyApkTool.exe`.
-5. *First Launch Initialization:* Because it is a standalone tool, it will automatically create and extract a `Resources/` directory next to the executable. This folder contains all the background tools needed (Apktool, ADB, etc.).
+5. *First Launch Magic:* The application will automatically extract all embedded tools (ADB, Apktool, AAPT, etc.) into a hidden/local `tools/` directory. 
 6. Go to **Settings**, verify that your Java Path is detected, and you are ready to go!
 
 ### Option 2: Build From Source (For Developers)
 To compile the Qt C++ source code yourself:
 
-**⚠️ Critical Build Note for Resources:** The GitHub repository *does not* include the heavy binary tools to save space. To successfully build and run the source code, you must:
-1. Download the official `MyApkTool.exe` from the [Releases page](https://github.com/alisakkaf/MyApkTool-Pro/releases).
-2. Run it once on your computer to force it to extract the `Resources/` folder.
-3. Copy that fully populated `Resources/` folder into your C++ build directory before compiling.
-
 **1. Clone the Source Code**
 Open CMD or PowerShell:
 ```bash
-git clone [https://github.com/alisakkaf/MyApkTool-Pro.git](https://github.com/alisakkaf/MyApkTool-Pro.git)
+git clone https://github.com/alisakkaf/MyApkTool-Pro.git
 cd MyApkTool-Pro
+```
+
+**2. Build with Qt Creator**
+- Open `MyApkTool.pro` in Qt Creator.
+- Select your MinGW compiler.
+- Build and Run `(Ctrl + R)`.
+
+---
+
+<a id="architecture"></a>
+## 🏗️ Project Architecture & Source Tree
+
+```text
+📦 MyApkTool-Pro
+ ┣ 📂 ui/            # UI layout files designed in Qt Designer
+ ┣ 📂 src/           # Implementation code (C++)
+ ┣ 📂 include/       # Header definitions (.h)
+ ┣ 📂 assets/        # Visual assets (icons, styles, splash UI)
+ ┣ 📂 tools/         # Auto-extracted external binaries
+ ┣ 📜 MyApkTool.pro  # Build configuration file
+ ┗ 📜 README.md      # Documentation (You are here)
+```
+
+---
+
+<a id="tools"></a>
+## 🧩 Embedded Tools & Open Source Licenses
+
+MyApkTool Pro acts as a GUI wrapper around various phenomenal open-source tools. Full credit goes to their respective authors:
+
+* **[Apktool](https://ibotpeaches.github.io/Apktool/)** - By iBotPeaches
+* **[APKEditor](https://github.com/REAndroid/APKEditor)** - By REAndroid
+* **[Smali/Baksmali](https://github.com/JesusFreke/smali)** - By JesusFreke
+* **[ADB & Zipalign & AAPT](https://developer.android.com/studio/command-line)** - By Google / Android Open Source Project
+* **[Uber-APK-Signer](https://github.com/patrickfav/uber-apk-signer)** / apksigner - By Google & patrickfav
+
+---
+
+<a id="license"></a>
+## ⚖️ License & Copyright
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+*You are free to use, modify, and distribute this software, as long as the original copyright notice is retained.*
+
+---
+
+<a id="contact"></a>
+## 👨‍💻 Author & Contact
+
+**Ali Sakkaf**
+* **GitHub:** [@alisakkaf](https://github.com/alisakkaf)
+* **Portfolio:** [mysterious-dev.com](https://mysterious-dev.com/)
+* **XDA Forums Thread:** [MyApkTool Pro Discussion](https://xdaforums.com/t/windows-tool-myapktool-pro-advanced-gui-for-apktool-signer-zipalign-adb-management-toolkit.4781628/)
+
+<p align="center">
+  <i>If you found this tool helpful, don't forget to give this repository a ⭐️ to help it reach more developers!</i>
+</p>
